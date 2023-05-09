@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Github Bulk Code Downloader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h3>Enter Your Github Personal Access Token</h3>
+      <br>
+      <form action="" method="post">
+        <div class="form-group">
+        <!-- <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}" required> -->
+          <label>Access Token:</label>
+         <input type="password" placeholder="Required" name="password" value="{{
+          request.form.password }}" required>
+        <input class="btn btn-sm btn-default" type="submit" value="Authenticate">
+        </div>
+      </form>
+      {% if error %}
+        <p class="text-danger"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>

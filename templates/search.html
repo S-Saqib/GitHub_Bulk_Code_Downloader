@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Github Code Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h3>Enter Search Criteria</h3>
+      <br>
+      <form action="" method="post">
+        <div class="form-group">
+          <label for="language">Language:</label>
+          <select id="language" name="language">
+              <option value="C">C</option>
+              <option value="Cpp">C++</option>
+              <option value="Java">Java</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Python">Python</option>
+              <option value="Ruby">Ruby</option>
+              <option value="SQL">SQL</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="searchBy">Search By:</label>
+          <select id="searchBy" name="searchBy">
+              <option value="k">Keywords</option>
+              <option value="s">Structural Syntax</option>
+          </select>
+        </div>
+        <div class="form-group">
+        <label>Keywords/phrases (comma separated):</label>
+         <input type="text" placeholder="Required" name="keywords" value="{{
+          request.form.keywords }}" required>
+        </div>
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+        <div class="form-group">
+        <label>File size (in KB) between:</label>
+         <input type="number" placeholder="0" name="fileSizeFrom" value="{{
+          request.form.fileSizeFrom }}" min=0 max=384>
+        <label> to </label>
+         <input type="number" placeholder="384" name="fileSizeTo" value="{{
+          request.form.fileSizeTo }}"  min=0 max=384>
+        </div>
+        <div class="form-group">
+         <label>No. of files to be downlaoded:</label>
+         <input type="number" placeholder="1000" name="fileCount" value="{{
+          request.form.fileCount }}" min=1 max=1000000>
+        </div>
+        <input class="btn btn-default" type="submit" value="Download">
+      </form>
+      {% if error %}
+        <p class="text-danger"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
