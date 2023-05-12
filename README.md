@@ -9,14 +9,14 @@ Prerequisite:
 3. OpenAI API Access Token
 
 To Run the Website Locally:
-1. Download the files
+1. Download the files/Clone the repository
 2. Go to the directory where login.py is located
 3. Create two directories named "2_APIResponses" and "4_SrcCodeFiles"
 4. Create a file named "openai_auth_token" and put only your OpenAI access token in it.
 5. Run the command: python login.py. It would create a web server at localhost, at port 5000
 6. In the web browser go to 127.0.0.1:5000/login
 
-How to use the Website:
+How to Use the Website:
 1. Enter your personal access token of github
 2. Select the appropriate language and specify whether you want to search by keyword or by structural syntax. For example, suppose, you want to match C source files that use the structure "dynamic memory allocation". You can directly put it in the keywords field and specify that you want to search by Structural Syntax. Alternatively, if you know that some of the keywords associated with it are "malloc", "realloc", "free" etc., you can search by keyword and put these keywords separated by comma.
 3. Specify the sizes of the source files you want to explore and the number of files you want to download.
